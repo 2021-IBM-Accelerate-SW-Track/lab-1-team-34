@@ -12,13 +12,13 @@ function Input(props) {
     newList.push(input);
     setTodo(newList);
     console.log(list);
-    debugger;
+    // debugger;
   }
   return (
     <div>
       <TextField
-        onChange={(v) => {
-          setInput(v);
+        onChange={(event) => {
+          setInput(event.target.value);
           console.log(input);
         }}
         // onEnter={() => {
