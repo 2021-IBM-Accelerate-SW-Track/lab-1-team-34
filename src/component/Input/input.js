@@ -12,8 +12,19 @@ function Input(props) {
     newList.push(input);
     setTodo(newList);
     console.log(list);
+    setInput("");
+    handleClear();
     // debugger;
   }
+
+  const handleClear = () => {
+    Array.from(document.querySelectorAll("input")).forEach((input) => {
+      input.value = "";
+    });
+    Array.from(document.querySelectorAll("textarea")).forEach((textarea) => {
+      textarea.value = "";
+    });
+  };
   return (
     <div>
       <TextField
@@ -33,6 +44,7 @@ function Input(props) {
         Submit
       </Button>
 
+      {/* list not updating quick but data does get added */}
       {list &&
         list.map((item, index) => {
           return <li key={index}>{item}</li>;
