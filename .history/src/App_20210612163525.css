@@ -1,9 +1,6 @@
 .App {
   text-align: center;
   background: aquamarine;
-  display: contents;
-  font-size: 30px;
-  list-style-type:  none; 
 }
 
 body {
@@ -18,7 +15,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-html {
-  background: #01a6f0;
 }

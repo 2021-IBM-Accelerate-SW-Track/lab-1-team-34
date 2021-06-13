@@ -1,9 +1,7 @@
 .App {
   text-align: center;
   background: aquamarine;
-  display: contents;
-  font-size: 30px;
-  list-style-type:  none; 
+  font-size: 50px;
 }
 
 body {
@@ -20,5 +18,5 @@ code {
     monospace;
 }
 html {
-  background: #01a6f0;
+  background: aquamarine;
 }

@@ -1,7 +1,8 @@
 import { TextField, Button } from "@material-ui/core";
 import React, { useState } from "react";
-
-const initialTodo = ["finish IBM", "go to school"];
+import "./input.css";
+import { FaGithub } from "react-icons/fa";
+const initialTodo = [""];
 
 function Input(props) {
   const [input, setInput] = useState("");
@@ -26,29 +27,37 @@ function Input(props) {
     });
   };
   return (
-    <div>
-      <TextField
+    <div className="inputcolor">
+ 
+      <TextField className="inputtext"
+        onKeyPress={(event) => {
+          if (event.key === 'Enter') {
+handleAdd();
+    }
+        }}
         onChange={(event) => {
           setInput(event.target.value);
           console.log(input);
         }}
-        // onEnter={() => {
-        //   list.push(input);
-        // }}
-        // id="outlined-basic"
-        label="Outlined"
+      
+        
+        label=""
         variant="outlined"
       />
-
-      <Button onClick={handleAdd} variant="contained" color="primary">
+      
+      <Button onClick={handleAdd}  variant="contained" color="primary" className="button">
         Submit
       </Button>
 
-      {/* list not updating quick but data does get added */}
+<div className="list">
+ <p className="container">
       {list &&
         list.map((item, index) => {
-          return <li key={index}>{item}</li>;
+          return <li className="list" key={index}>{item}</li>;
         })}
+  </p>
+ </div> 
+      {/* list not updating quick but data does get added */}
     </div>
   );
 }
