@@ -51,11 +51,11 @@
 .list {
   color: white;
   text-align: center;
-  overflow-wrap: break-word;
 }
 
 ul li {
   padding: 10px 0px;
+  max-width: 100px;
 }
 
 li:before {
