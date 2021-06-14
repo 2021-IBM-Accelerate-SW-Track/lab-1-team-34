@@ -11,7 +11,7 @@
     rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 
-/* @keyframes pulse {
+@keyframes pulse {
   from {
     transform: scale3d(1, 1, 1);
   }
@@ -24,12 +24,8 @@
     transform: scale3d(1, 1, 1);
   }
 }
-.App > div > .inputcolor {
+/* .App > div > .inputcolor {
   animation: pulse 3400ms linear infinite both;
-} */
-.line {
-  background-color: rgb(46, 82, 82);
-  padding: 10px;
 }
 .inputtext {
   background-color: #ffffff;
@@ -43,7 +39,7 @@
   font-size: 18px;
   border-radius: 10px;
   padding-right: 10px;
-}
+} */
 .container {
   padding-top: 0px;
   padding-bottom: 30px;

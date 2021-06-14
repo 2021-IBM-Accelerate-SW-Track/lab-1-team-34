@@ -11,7 +11,7 @@
     rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 
-/* @keyframes pulse {
+@keyframes pulse {
   from {
     transform: scale3d(1, 1, 1);
   }
@@ -25,11 +25,7 @@
   }
 }
 .App > div > .inputcolor {
-  animation: pulse 3400ms linear infinite both;
-} */
-.line {
-  background-color: rgb(46, 82, 82);
-  padding: 10px;
+  animation: pulse 2000ms linear infinite both;
 }
 .inputtext {
   background-color: #ffffff;

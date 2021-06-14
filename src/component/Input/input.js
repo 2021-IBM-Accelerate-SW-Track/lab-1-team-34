@@ -1,7 +1,8 @@
 import { TextField, Button } from "@material-ui/core";
 import React, { useState } from "react";
 import "./input.css";
-import { FaGithub } from "react-icons/fa";
+// import { FaGithub } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const initialTodo = [""];
 
 function Input(props) {
@@ -26,37 +27,47 @@ function Input(props) {
       textarea.value = "";
     });
   };
+
   return (
     <div className="inputcolor">
- 
-      <TextField className="inputtext"
+      <TextField
+        className="inputtext"
         onKeyPress={(event) => {
-          if (event.key === 'Enter') {
-handleAdd();
-    }
+          if (event.key === "Enter") {
+            handleAdd();
+          }
         }}
         onChange={(event) => {
           setInput(event.target.value);
           console.log(input);
         }}
-      
-        
         label=""
         variant="outlined"
       />
-      
-      <Button onClick={handleAdd}  variant="contained" color="primary" className="button">
+
+      <Button
+        onClick={handleAdd}
+        variant="contained"
+        color="primary"
+        className="button"
+      >
         Submit
       </Button>
 
-<div className="list">
- <p className="container">
-      {list &&
-        list.map((item, index) => {
-          return <li className="list" key={index}>{item}</li>;
-        })}
-  </p>
- </div> 
+      <div className="list">
+        <p className="container">
+          {list &&
+            list.map((item, index) => {
+              return (
+                <div className="line">
+                  <li className="list" key={index}>
+                    {item}
+                  </li>
+                </div>
+              );
+            })}
+        </p>
+      </div>
       {/* list not updating quick but data does get added */}
     </div>
   );

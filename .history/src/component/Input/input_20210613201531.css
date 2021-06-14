@@ -27,10 +27,6 @@
 .App > div > .inputcolor {
   animation: pulse 3400ms linear infinite both;
 } */
-.line {
-  background-color: rgb(46, 82, 82);
-  padding: 10px;
-}
 .inputtext {
   background-color: #ffffff;
   border: 0;
