@@ -9,10 +9,9 @@ function App() {
   const [todos, setTodos] = useState([]);
   return (
     <div className="App">
-      <Header />
-      {/* <header>
-        <h1 className="ibm-header">IBM To do list</h1>
-      </header> */}
+      <header>
+        <h1>IBM To do list</h1>
+      </header>
       <Form
         inputText={inputText}
         todos={todos}
@@ -20,6 +19,7 @@ function App() {
         setInputText={setInputText}
       />
       <List setTodos={setTodos} todos={todos} />
+      <Header />
     </div>
   );
 }

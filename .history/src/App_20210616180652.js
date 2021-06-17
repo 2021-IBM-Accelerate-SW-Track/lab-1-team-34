@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <header>
+      <header>
         <h1 className="ibm-header">IBM To do list</h1>
-      </header> */}
+      </header>
       <Form
         inputText={inputText}
         todos={todos}

@@ -18,7 +18,7 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
     e.preventDefault();
     if (
       inputText != "" &&
-      // todos.some(inputText === todos) &&
+      todos.some(inputText === todos) &&
       // todos.includes(inputText) == false &&
       // not checking duplicate items
       // todos is an object
@@ -35,11 +35,13 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
       <input
         value={inputText}
         onChange={inputTextHandler}
+        //data testing
+        data-testid="new-item-input"
         type="text"
         className="todo-input"
       />
       <button onClick={inputValidation} className="todo-button" type="submit">
-        <i className="fas fa-plus-square"></i>
+        <i id="plus" className="fas fa-plus-square"></i>
       </button>
       {/* <div className="select">
         <select name="todos" className="filter-todo">

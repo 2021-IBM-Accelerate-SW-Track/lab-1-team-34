@@ -56,16 +56,15 @@ form button {
   vertical-align: middle;
 }
 form button {
-  color: rgb(11, 212, 162);
+  color: #000000;
   background: #f7fffe;
-  text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-left: 10px;
 }
 form button:hover {
   background: rgb(11, 212, 162);
-  color: white;
+  color: #ff6f47;
 }
 .todo-container {
   display: flex;
@@ -87,7 +86,7 @@ form button:hover {
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
-  border-radius: 20px;
+  border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }

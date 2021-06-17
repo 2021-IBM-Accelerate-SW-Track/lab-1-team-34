@@ -14,32 +14,18 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
     setInputText("");
   };
 
-  const inputValidation = (e) => {
-    e.preventDefault();
-    if (
-      inputText != "" &&
-      // todos.some(inputText === todos) &&
-      // todos.includes(inputText) == false &&
-      // not checking duplicate items
-      // todos is an object
-
-      inputText != " "
-    ) {
-      console.log(todos);
-      submitTodoHandler(e);
-    }
-  };
-
   return (
     <form>
       <input
         value={inputText}
         onChange={inputTextHandler}
+        //data testing
+        data-testid="new-item-input"
         type="text"
         className="todo-input"
       />
-      <button onClick={inputValidation} className="todo-button" type="submit">
-        <i className="fas fa-plus-square"></i>
+      <button onClick={submitTodoHandler} className="todo-button" type="submit">
+        <i className="fas fa-plus-square" className="plus"></i>
       </button>
       {/* <div className="select">
         <select name="todos" className="filter-todo">
