@@ -16,7 +16,15 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
 
   const inputValidation = (e) => {
     e.preventDefault();
-    if (inputText !== "" && inputText !== " ") {
+    if (
+      inputText !== "" &&
+      // todos.some(inputText === todos) &&
+      // todos.includes(inputText) == false &&
+      // not checking duplicate items
+      // todos is an object
+
+      inputText !== " "
+    ) {
       console.log(todos);
       submitTodoHandler(e);
     }

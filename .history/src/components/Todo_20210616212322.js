@@ -19,6 +19,34 @@ const Todo = ({ text, setTodos, todos, todo }) => {
     );
   };
 
+  
+const form = ({ setInputText, todos, setTodos, inputText }) => {
+  const inputTextHandler = (e) => {
+    console.log(e.target.value);
+    setInputText(e.target.value);
+  };
+  const submitTodoHandler = (e) => {
+    e.preventDefault();
+    setTodos([
+      ...todos,
+      { text: inputText, completed: false, id: Math.random() * 1000 },
+    ]);
+    setInputText("");
+  };
+
+  const inputValidation = (e) => {
+    e.preventDefault();
+    if (inputText !== "" && inputText !== " ") {
+      console.log(todos);
+      submitTodoHandler(e);
+    }
+  };
+
+  {
+    /* <button onClick={editHandler} className="edit button"> */
+  }
+  // <button className="edit-btn">
+  //   <i class="fas fa-pencil-alt"></i>
   return (
     <div className="todo">
       <li className={`todo-item ${todo.completed ? "completed" : ""} `}>

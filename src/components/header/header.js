@@ -1,8 +1,0 @@
-import "./header.css";
-export default function Header() {
-  return (
-    <div className="header">
-      2021 IBM Accelerate Software
-    </div>
-  );
-}

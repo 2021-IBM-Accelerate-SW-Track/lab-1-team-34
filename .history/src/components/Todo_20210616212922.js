@@ -19,6 +19,16 @@ const Todo = ({ text, setTodos, todos, todo }) => {
     );
   };
 
+  const editHandler = (e) => {
+    setTodos(e.target.value);
+    setInputText(e.target.value);
+  };
+
+  {
+    /* <button onClick={editHandler} className="edit button"> */
+  }
+  // <button className="edit-btn">
+  //   <i class="fas fa-pencil-alt"></i>
   return (
     <div className="todo">
       <li className={`todo-item ${todo.completed ? "completed" : ""} `}>

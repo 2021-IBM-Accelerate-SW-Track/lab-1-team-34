@@ -1,5 +1,6 @@
 import react from "react";
 
+ 
 const Todo = ({ text, setTodos, todos, todo }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
@@ -19,6 +20,22 @@ const Todo = ({ text, setTodos, todos, todo }) => {
     );
   };
 
+  // const editHandler = (e) => {
+  //   setTodos(e.target.value);
+  //   // setInputText(e.target.value);
+  // };
+const Todo = ({ text, setTodos, todos, todo }) => {
+  const [edit, setEdit] = useState(false);
+
+  const handleEdit = () => {
+    setEdit(!edit);
+  };
+
+  {
+    /* <button onClick={editHandler} className="edit button"> */
+  }
+  // <button className="edit-btn">
+  //   <i class="fas fa-pencil-alt"></i>
   return (
     <div className="todo">
       <li className={`todo-item ${todo.completed ? "completed" : ""} `}>
@@ -28,7 +45,7 @@ const Todo = ({ text, setTodos, todos, todo }) => {
         <i className="fas fa-check"></i>
       </button>
 
-      <button className="edit-btn">
+      <button onClick={handleEdit} className="edit-btn">
         <i class="fas fa-pencil-alt"></i>
       </button>
 

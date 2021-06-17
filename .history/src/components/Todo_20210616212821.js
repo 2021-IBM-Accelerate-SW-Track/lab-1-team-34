@@ -19,6 +19,27 @@ const Todo = ({ text, setTodos, todos, todo }) => {
     );
   };
 
+  const editHandler = () => {
+    console.log(e.target.value);
+    setInputText(e.target.value);
+  };
+  const submitTodoHandler = (e) => {
+    e.preventDefault();
+    setTodos([
+      ...todos,
+      { text: inputText, completed: false, id: Math.random() * 1000 },
+    ]);
+    setInputText("");
+  };
+  
+}
+
+
+  {
+    /* <button onClick={editHandler} className="edit button"> */
+  }
+  // <button className="edit-btn">
+  //   <i class="fas fa-pencil-alt"></i>
   return (
     <div className="todo">
       <li className={`todo-item ${todo.completed ? "completed" : ""} `}>

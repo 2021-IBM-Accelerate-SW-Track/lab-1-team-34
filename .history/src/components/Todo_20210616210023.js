@@ -18,7 +18,11 @@ const Todo = ({ text, setTodos, todos, todo }) => {
       })
     );
   };
-
+  {
+    /* <button onClick={editHandler} className="edit button"> */
+  }
+  // <button className="edit-btn">
+  //   <i class="fas fa-pencil-alt"></i>
   return (
     <div className="todo">
       <li className={`todo-item ${todo.completed ? "completed" : ""} `}>
@@ -28,7 +32,7 @@ const Todo = ({ text, setTodos, todos, todo }) => {
         <i className="fas fa-check"></i>
       </button>
 
-      <button className="edit-btn">
+      <button className="complete-btn">
         <i class="fas fa-pencil-alt"></i>
       </button>
 

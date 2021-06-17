@@ -27,11 +27,9 @@ form button {
   font-size: 2rem;
   border: none;
   background: white;
-  border-radius: 15px;
-  margin-left: 3px;
 }
 form button {
-  color: #028b79;
+  color: #ff6f47;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -57,7 +55,7 @@ form button:hover {
   font-size: 1rem;
   color: black;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
   border-radius: 15px;

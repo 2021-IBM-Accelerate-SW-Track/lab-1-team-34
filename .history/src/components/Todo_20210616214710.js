@@ -28,7 +28,7 @@ const Todo = ({ text, setTodos, todos, todo }) => {
         <i className="fas fa-check"></i>
       </button>
 
-      <button className="edit-btn">
+      <button onClick={handleEdit} className="edit-btn">
         <i class="fas fa-pencil-alt"></i>
       </button>
 
