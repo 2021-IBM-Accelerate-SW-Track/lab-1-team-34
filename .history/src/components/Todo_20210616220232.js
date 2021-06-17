@@ -1,6 +1,6 @@
 import react from "react";
 
-const Todo = ({ text, setTodos, todos, todo, setInputText, inputText }) => {
+const Todo = ({ text, setTodos, todos, todo, setInputText }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
@@ -19,19 +19,18 @@ const Todo = ({ text, setTodos, todos, todo, setInputText, inputText }) => {
     );
   };
 
-  const inputTextHandler = (e) => {
-    console.log(e.target.value);
-    setInputText(e.target.value);
-  };
+  const editHandler 
 
   return (
     <div className="todo">
-      <li className={`todo-item ${todo.completed ? "completed" : ""} `}></li>
+      <li className={`todo-item ${todo.completed ? "completed" : ""} `}>
+        {text}
+      </li>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i>
       </button>
 
-      <button onClick={inputTextHandler} className="edit-btn">
+      <button className="edit-btn">
         <i class="fas fa-pencil-alt"></i>
       </button>
 

@@ -3,7 +3,7 @@ import Form from "./components/form";
 import React, { useState } from "react";
 import List from "./components/list";
 import Header from "./components/header";
-import Todo from "./components/Todo";
+import Todo from "./components/todo";
 
 function App() {
   const [inputText, setInputText] = useState("");

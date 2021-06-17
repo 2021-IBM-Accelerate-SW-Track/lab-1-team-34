@@ -26,7 +26,11 @@ const Todo = ({ text, setTodos, todos, todo, setInputText, inputText }) => {
 
   return (
     <div className="todo">
-      <li className={`todo-item ${todo.completed ? "completed" : ""} `}></li>
+      <li className={`todo-item ${todo.completed ? "completed" : ""} `}>
+        {text} value={inputText}
+        onChange={inputTextHandler}
+        type="text"
+      </li>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i>
       </button>
