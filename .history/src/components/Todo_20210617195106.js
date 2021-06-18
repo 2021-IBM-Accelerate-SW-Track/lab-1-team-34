@@ -24,13 +24,13 @@ const Todo = ({ text, setTodos, todos, todo }) => {
   const [ifHit, setifHit] = useState(false);
   const edit = () => {
     setifHit(!ifHit);
+    console.log(ifHit);
   };
 
   return (
     <div className="todo">
       <li className={`todo-item ${todo.completed ? "completed" : ""} `} onCh>
         {ifHit == true ? (
-          // if hit is true then render the 1st div(runs the code)
           <div
             contenteditable="true"
             // onInput={(e) =>

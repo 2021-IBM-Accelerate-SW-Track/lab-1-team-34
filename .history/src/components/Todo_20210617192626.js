@@ -21,44 +21,25 @@ const Todo = ({ text, setTodos, todos, todo }) => {
     );
   };
   const [copytext, setcopytext] = useState(text);
-  const [ifHit, setifHit] = useState(false);
-  const edit = () => {
-    setifHit(!ifHit);
-  };
+  const edit = () => {};
 
   return (
     <div className="todo">
-      <li className={`todo-item ${todo.completed ? "completed" : ""} `} onCh>
-        {ifHit == true ? (
-          // if hit is true then render the 1st div(runs the code)
-          <div
-            contenteditable="true"
-            // onInput={(e) =>
-            onKeyPress={(event) => {
-              if (event.key === "Enter") {
-                edit();
-              }
-            }}
-          >
-            {copytext}
-          </div>
-        ) : (
-          <div
-            contenteditable="false"
-
-            // onInput={(e) =>
-          >
-            {copytext}
-          </div>
-        )}
-      </li>
-
+      {/* <li className={`todo-item ${todo.completed ? "completed" : ""} `}>
+        {copytext}
+      </li> */}
+      <div
+        contenteditable="true"
+        // onInput={(e) =>
+      >
+        {copytext}
+      </div>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i>
       </button>
 
       {/* edit handled should be here */}
-      <button className="edit-btn" onClick={edit}>
+      <button className="edit-btn">
         <i class="fas fa-pencil-alt"></i>
       </button>
 
