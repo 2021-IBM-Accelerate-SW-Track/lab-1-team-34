@@ -1,5 +1,7 @@
 import React from "react";
 
+var todosList = [];
+
 const form = ({ setInputText, todos, setTodos, inputText }) => {
   const inputTextHandler = (e) => {
     console.log(e.target.value);
@@ -16,10 +18,17 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
 
   const inputValidation = (e) => {
     e.preventDefault();
-    if (inputText !== "" && inputText !== " ") {
+    let dup = false;
+    for( const i of todosList){
+      if(inputText.localeCompare(i)==0){
+        dup = true;
+      }
+    }
+    if (inputText !== "" && inputText !== " " && !dup) {
       console.log(todos);
       submitTodoHandler(e);
     }
+    todosList.push(inputText);
   };
 
   return (
