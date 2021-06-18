@@ -25,7 +25,10 @@ const Todo = ({ text, setTodos, todos, todo }) => {
   const edit = () => {
     setifHit(!ifHit);
   };
-
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date+' '+time;
   return (
     <div className="todo">
       <li className={`todo-item ${todo.completed ? "completed" : ""} `} onCh>
@@ -51,6 +54,10 @@ const Todo = ({ text, setTodos, todos, todo }) => {
             {copytext}
           </div>
         )}
+        <div
+          contenteditable="false">
+          {dateTime}
+        </div>
       </li>
 
       <button onClick={completeHandler} className="complete-btn">
@@ -65,6 +72,7 @@ const Todo = ({ text, setTodos, todos, todo }) => {
       <button onClick={deleteHandler} className="trash-btn">
         <i className="fas fa-trash"></i>
       </button>
+      
     </div>
   );
 };
