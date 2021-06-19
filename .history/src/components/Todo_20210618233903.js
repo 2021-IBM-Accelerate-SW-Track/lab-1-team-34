@@ -53,6 +53,8 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
             {copytext}
 
             <br />
+
+            {date}
           </div>
         )}
         <div contenteditable="true"> {date} </div>

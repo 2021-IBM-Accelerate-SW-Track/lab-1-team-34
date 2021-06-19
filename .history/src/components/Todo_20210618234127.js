@@ -41,7 +41,7 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
             // onInput={(e) =>
             onKeyPress={(event) => {
               if (event.key === "Enter") {
-                edit();
+                copytext();
               }
             }}
           >
