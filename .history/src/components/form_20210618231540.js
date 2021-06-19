@@ -33,9 +33,7 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
 
     console.log(todos);
   };
-  function isEmptyOrSpaces(str) {
-    return str === null || str.match(/^ *$/) !== null;
-  }
+
   const inputValidation = (e) => {
     e.preventDefault();
     let dup = false;
@@ -44,14 +42,16 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         dup = true;
       }
     }
-    if (isEmptyOrSpaces(inputText) == true || dup == true) {
-      alert("Your input is invalid. Input may be a duplicate or is empty");
+    if (inputText !=== "" ) {
       return;
-    } else {
-      console.log(todos);
-      submitTodoHandler(e);
-      todosList.push(inputText);
     }
+      else
+      
+      {
+        console.log(todos);
+        submitTodoHandler(e);
+      }
+      todosList.push(inputText);
   };
 
   // const displayDate = (e) => {

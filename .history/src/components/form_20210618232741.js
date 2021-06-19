@@ -45,7 +45,6 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
       }
     }
     if (isEmptyOrSpaces(inputText) == true || dup == true) {
-      alert("Your input is invalid. Input may be a duplicate or is empty");
       return;
     } else {
       console.log(todos);
