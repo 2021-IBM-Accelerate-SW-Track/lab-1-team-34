@@ -26,12 +26,11 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         text: inputText,
         completed: false,
         id: Math.random() * 1000,
+
         date: dateTime,
       },
     ]);
     setInputText("");
-
-    console.log(todos);
   };
 
   const inputValidation = (e) => {

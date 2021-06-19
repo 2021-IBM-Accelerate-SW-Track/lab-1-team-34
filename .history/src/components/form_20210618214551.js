@@ -2,36 +2,18 @@ import React from "react";
 
 var todosList = [];
 
-const form = ({ setInputText, todos, setTodos, inputText }) => {
+const form = ({ setInputText, todos, setTodos, inputText, dateTime }) => {
   const inputTextHandler = (e) => {
     console.log(e.target.value);
     setInputText(e.target.value);
   };
   const submitTodoHandler = (e) => {
-    var today = new Date();
-    var date =
-      today.getFullYear() +
-      "-" +
-      (today.getMonth() + 1) +
-      "-" +
-      today.getDate();
-    var time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + " " + time;
-    console.log(dateTime);
     e.preventDefault();
     setTodos([
       ...todos,
-      {
-        text: inputText,
-        completed: false,
-        id: Math.random() * 1000,
-        date: dateTime,
-      },
+      { text: inputText, completed: false, id: Math.random() * 1000 },
     ]);
     setInputText("");
-
-    console.log(todos);
   };
 
   const inputValidation = (e) => {
@@ -49,10 +31,18 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
     todosList.push(inputText);
   };
 
-  // const displayDate = (e) => {
-  //   console.log(date);
-  //   submitTodoHandler(e);
-  // };
+  var today = new Date();
+  var date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+  var time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date + " " + time;
+
+  const newDate = () => {
+    return {
+      now: new Date().now,
+    };
+  };
 
   return (
     <form>
@@ -64,7 +54,7 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
       />
       <button
         onClick={inputValidation}
-        // onClick={displayDate}
+        onClick={newDate}
         className="todo-button"
         type="submit"
       >

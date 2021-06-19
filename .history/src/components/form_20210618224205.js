@@ -30,8 +30,6 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
       },
     ]);
     setInputText("");
-
-    console.log(todos);
   };
 
   const inputValidation = (e) => {

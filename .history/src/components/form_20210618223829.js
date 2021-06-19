@@ -18,20 +18,12 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
     var time =
       today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date + " " + time;
-    console.log(dateTime);
     e.preventDefault();
     setTodos([
       ...todos,
-      {
-        text: inputText,
-        completed: false,
-        id: Math.random() * 1000,
-        date: dateTime,
-      },
+      { text: inputText, completed: false, id: Math.random() * 1000, dateTime },
     ]);
     setInputText("");
-
-    console.log(todos);
   };
 
   const inputValidation = (e) => {

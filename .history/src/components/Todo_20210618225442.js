@@ -54,11 +54,10 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
             // onInput={(e) =>
           >
             <br />
-            {copytext}
-
+            {date}
             <br />
 
-            {date}
+            {copytext}
           </div>
         )}
         <div contenteditable="true"> </div>

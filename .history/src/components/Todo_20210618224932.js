@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Todo = ({ text, setTodos, todos, todo, date }) => {
+const Todo = ({ text, setTodos, todos, todo, dateTime }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
@@ -53,12 +53,8 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
 
             // onInput={(e) =>
           >
-            <br />
+            {dateTime}
             {copytext}
-
-            <br />
-
-            {date}
           </div>
         )}
         <div contenteditable="true"> </div>

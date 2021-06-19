@@ -8,30 +8,12 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
     setInputText(e.target.value);
   };
   const submitTodoHandler = (e) => {
-    var today = new Date();
-    var date =
-      today.getFullYear() +
-      "-" +
-      (today.getMonth() + 1) +
-      "-" +
-      today.getDate();
-    var time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + " " + time;
-    console.log(dateTime);
     e.preventDefault();
     setTodos([
       ...todos,
-      {
-        text: inputText,
-        completed: false,
-        id: Math.random() * 1000,
-        date: dateTime,
-      },
+      { text: inputText, completed: false, id: Math.random() * 1000 },
     ]);
     setInputText("");
-
-    console.log(todos);
   };
 
   const inputValidation = (e) => {
@@ -62,12 +44,7 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         type="text"
         className="todo-input"
       />
-      <button
-        onClick={inputValidation}
-        // onClick={displayDate}
-        className="todo-button"
-        type="submit"
-      >
+      <button onClick={inputValidation} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
       {/* <div className="select">
