@@ -11,9 +11,8 @@ function App() {
   const [date, setDate] = useState("DateTime");
 
   return (
-    <div className="App">
+    <div className="App" className="list-container">
       <Header />
-
       <Form
         data-testid="new-item-input"
         inputText={inputText}

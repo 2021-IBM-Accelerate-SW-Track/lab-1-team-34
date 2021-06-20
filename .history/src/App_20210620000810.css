@@ -1,42 +1,8 @@
-.list-container {
-  background-color: aquamarine;
-}
 .lady-list {
   margin-top: 50px;
   max-width: 350px;
   max-height: 350px;
   border-radius: 40px;
-}
-@keyframes floatY {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-#root > .App > form {
-  animation: floatY 3300ms ease-in-out infinite;
-}
-
-#root > .App > .todo-container {
-  animation: floatY 3300ms ease-in-out infinite;
-}
-
-.App > .header > .ibm {
-  animation: rotate5 3200ms infinite both;
-}
-@keyframes rotate5 {
-  0%,
-  100% {
-    transform: rotate(-5deg);
-  }
-
-  50% {
-    transform: rotate(5deg);
-  }
 }
 
 * {
@@ -55,8 +21,6 @@ header {
 }
 .ibm {
   border-radius: 30px;
-  max-width: 300px;
-  max-height: 300px;
 }
 
 header {
@@ -81,14 +45,12 @@ form button {
   background: white;
   border-radius: 15px;
   margin-left: 3px;
-  box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
 }
 form button {
   color: #028b79;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
 }
 form button:hover {
   background: #ff6f47;
@@ -115,16 +77,12 @@ form button:hover {
   align-items: center;
   transition: all 1s ease;
   border-radius: 15px;
-  box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
 }
 .filter-todo {
   padding: 1rem;
 }
 .todo li {
   flex: 1;
-}
-.shadow-button {
-  box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
 }
 
 .trash-btn,

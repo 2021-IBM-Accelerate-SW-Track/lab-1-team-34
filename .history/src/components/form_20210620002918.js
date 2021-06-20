@@ -84,6 +84,7 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
       />
       <Button
         variant="contained"
+        className="shadow-button"
         onClick={inputValidation}
         // onClick={displayDate}
         className={classes.todobutton}

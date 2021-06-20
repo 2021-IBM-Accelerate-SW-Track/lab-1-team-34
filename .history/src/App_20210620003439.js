@@ -13,14 +13,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-
-      <Form
-        data-testid="new-item-input"
-        inputText={inputText}
-        todos={todos}
-        setTodos={setTodos}
-        setInputText={setInputText}
-      />
+      <div className="list-container">
+        <Form
+          data-testid="new-item-input"
+          inputText={inputText}
+          todos={todos}
+          setTodos={setTodos}
+          setInputText={setInputText}
+        />
+      </div>
       <List setTodos={setTodos} todos={todos} />
     </div>
   );

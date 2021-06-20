@@ -11,16 +11,17 @@ function App() {
   const [date, setDate] = useState("DateTime");
 
   return (
-    <div className="App">
+    <div className="App" className="list-container">
       <Header />
-
-      <Form
-        data-testid="new-item-input"
-        inputText={inputText}
-        todos={todos}
-        setTodos={setTodos}
-        setInputText={setInputText}
-      />
+      <div>
+        <Form
+          data-testid="new-item-input"
+          inputText={inputText}
+          todos={todos}
+          setTodos={setTodos}
+          setInputText={setInputText}
+        />
+      </div>
       <List setTodos={setTodos} todos={todos} />
     </div>
   );

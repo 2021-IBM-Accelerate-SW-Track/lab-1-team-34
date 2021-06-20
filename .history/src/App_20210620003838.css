@@ -18,11 +18,7 @@
   }
 }
 #root > .App > form {
-  animation: floatY 3300ms ease-in-out infinite;
-}
-
-#root > .App > .todo-container {
-  animation: floatY 3300ms ease-in-out infinite;
+  animation: floatY 3500ms ease-in-out infinite;
 }
 
 .App > .header > .ibm {

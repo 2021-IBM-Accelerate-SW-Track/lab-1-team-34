@@ -13,7 +13,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <Form
         data-testid="new-item-input"
         inputText={inputText}

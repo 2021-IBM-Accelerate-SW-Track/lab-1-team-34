@@ -3,6 +3,7 @@ import Form from "./components/form";
 import React, { useState } from "react";
 import List from "./components/list";
 import Header from "./components/header";
+import Style from "./components/Style";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -13,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <Form
         data-testid="new-item-input"
         inputText={inputText}
@@ -22,6 +22,7 @@ function App() {
         setInputText={setInputText}
       />
       <List setTodos={setTodos} todos={todos} />
+      <Style />
     </div>
   );
 }

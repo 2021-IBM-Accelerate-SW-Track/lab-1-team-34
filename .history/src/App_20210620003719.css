@@ -21,10 +21,6 @@
   animation: floatY 3300ms ease-in-out infinite;
 }
 
-#root > .App > .todo-container {
-  animation: floatY 3300ms ease-in-out infinite;
-}
-
 .App > .header > .ibm {
   animation: rotate5 3200ms infinite both;
 }
