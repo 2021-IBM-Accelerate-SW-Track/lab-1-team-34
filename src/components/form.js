@@ -2,9 +2,9 @@ import React from "react";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/styles";
 
-var todosList = [];
+//var todosList = [];
 
-const form = ({ setInputText, todos, setTodos, inputText }) => {
+const form = ({ setInputText, todos, setTodos, inputText,setTDL, tDL }) => {
   const inputTextHandler = (e) => {
     console.log(e.target.value);
     setInputText(e.target.value);
@@ -53,7 +53,7 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
   const inputValidation = (e) => {
     e.preventDefault();
     let dup = false;
-    for (const i of todosList) {
+    for (const i of tDL) {
       if (inputText.localeCompare(i) == 0) {
         dup = true;
       }
@@ -64,7 +64,9 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
     } else {
       console.log(todos);
       submitTodoHandler(e);
-      todosList.push(inputText);
+      setTDL([...tDL,inputText]);
+      //todosList.push(inputText);
+      console.log(tDL[0]);
     }
   };
 
