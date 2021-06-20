@@ -13,8 +13,8 @@ const Todolist = ({ todos, setTodos }) => {
             todos={todos}
             todo={todo}
             date={todo.date}
-            inputText={todo.inputText}
-            setInputText={todo.setInputText}
+            inputText={inputText}
+            setInputText={setInputText}
           />
         ))}
       </ul>

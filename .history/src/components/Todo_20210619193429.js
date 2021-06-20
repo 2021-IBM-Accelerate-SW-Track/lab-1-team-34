@@ -7,7 +7,7 @@ const Todo = ({
   todo,
   date,
   setInputText,
-  inputText,
+  InputText,
 }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
@@ -25,28 +25,6 @@ const Todo = ({
       })
     );
   };
-
-  var todosList = [];
-  function isEmptyOrSpaces(str) {
-    return str === null || str.match(/^ *$/) !== null;
-  }
-  const inputValidation = () => {
-    let dup = false;
-    for (const i of todosList) {
-      if (inputText.localeCompare(i) === 0) {
-        dup = true;
-      }
-    }
-    if (isEmptyOrSpaces(inputText) === true || dup === true) {
-      alert("Your input is invalid. Input may be a duplicate or is empty");
-      return;
-    } else {
-      console.log(todos);
-      //  submitTodoHandler(e);
-      todosList.push(inputText);
-    }
-  };
-
   const [copytext, setcopytext] = useState(text);
   const [ifHit, setifHit] = useState(false);
   const edit = () => {
@@ -63,9 +41,6 @@ const Todo = ({
             onKeyPress={(event) => {
               if (event.key === "Enter") {
                 edit();
-                if (event.key === "Enter") {
-                  inputValidation();
-                }
               }
             }}
           >

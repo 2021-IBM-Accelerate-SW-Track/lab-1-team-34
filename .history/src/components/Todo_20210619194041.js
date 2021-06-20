@@ -30,7 +30,8 @@ const Todo = ({
   function isEmptyOrSpaces(str) {
     return str === null || str.match(/^ *$/) !== null;
   }
-  const inputValidation = () => {
+  const inputValidation = (e) => {
+    e.preventDefault();
     let dup = false;
     for (const i of todosList) {
       if (inputText.localeCompare(i) === 0) {
