@@ -12,7 +12,6 @@ const Todolist = ({ todos, setTodos }) => {
             setTodos={setTodos}
             todos={todos}
             todo={todo}
-            date={todo.date}
           />
         ))}
       </ul>

@@ -20,7 +20,7 @@ function App() {
         setTodos={setTodos}
         setInputText={setInputText}
       />
-      <List setTodos={setTodos} todos={todos} />
+      <List setTodos={setTodos} todos={todos} date={date} />
       <DateTime />
     </div>
   );

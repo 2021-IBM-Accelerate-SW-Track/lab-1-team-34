@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Todo = ({ text, setTodos, todos, todo, date }) => {
+const Todo = ({ text, setTodos, todos, todo, dateTime }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
@@ -24,12 +24,12 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
     setifHit(!ifHit);
   };
 
-  // var today = new Date();
-  // var date =
-  //   today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-  // var time =
-  //   today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  // var dateTime = date + " " + time;
+  var today = new Date();
+  var date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+  var time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date + " " + time;
 
   return (
     <div className="todo">
@@ -48,14 +48,15 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
             {copytext}
           </div>
         ) : (
-          <div contenteditable="false">
-            <br />
-            {copytext}
+          <div
+            contenteditable="false"
 
-            <br />
+            // onInput={(e) =>
+          >
+            {copytext}
           </div>
         )}
-        <div contenteditable="true"> {date} </div>
+        <div> {dateTime}</div>
       </li>
 
       <button onClick={completeHandler} className="complete-btn">

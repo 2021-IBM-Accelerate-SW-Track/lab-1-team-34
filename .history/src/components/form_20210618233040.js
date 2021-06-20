@@ -66,13 +66,11 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         onChange={inputTextHandler}
         type="text"
         className="todo-input"
-        data-testid="new-item-input"
       />
       <button
         onClick={inputValidation}
         // onClick={displayDate}
         className="todo-button"
-        data-testid="new-item-button"
         type="submit"
       >
         <i className="fas fa-plus-square"></i>

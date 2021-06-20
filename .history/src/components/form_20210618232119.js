@@ -44,8 +44,7 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         dup = true;
       }
     }
-    if (isEmptyOrSpaces(inputText) == true || dup == true) {
-      alert("Your input is invalid. Input may be a duplicate or is empty");
+    if (isEmptyOrSpaces(inputText)) {
       return;
     } else {
       console.log(todos);
@@ -66,13 +65,11 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         onChange={inputTextHandler}
         type="text"
         className="todo-input"
-        data-testid="new-item-input"
       />
       <button
         onClick={inputValidation}
         // onClick={displayDate}
         className="todo-button"
-        data-testid="new-item-button"
         type="submit"
       >
         <i className="fas fa-plus-square"></i>

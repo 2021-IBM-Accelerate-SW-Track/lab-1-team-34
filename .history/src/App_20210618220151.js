@@ -3,7 +3,6 @@ import Form from "./components/form";
 import React, { useState } from "react";
 import List from "./components/list";
 import Header from "./components/header";
-import DateTime from "./components/date";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -20,8 +19,7 @@ function App() {
         setTodos={setTodos}
         setInputText={setInputText}
       />
-      <List setTodos={setTodos} todos={todos} />
-      <DateTime />
+      <List setTodos={setTodos} todos={todos} date={date} />
     </div>
   );
 }

@@ -8,34 +8,14 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
     setInputText(e.target.value);
   };
   const submitTodoHandler = (e) => {
-    var today = new Date();
-    var date =
-      today.getFullYear() +
-      "/" +
-      (today.getMonth() + 1) +
-      "/" +
-      today.getDate();
-    var time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + " " + time;
-    console.log(dateTime);
     e.preventDefault();
     setTodos([
       ...todos,
-      {
-        text: inputText,
-        completed: false,
-        id: Math.random() * 1000,
-        date: dateTime,
-      },
+      { text: inputText, completed: false, id: Math.random() * 1000 },
     ]);
     setInputText("");
-
-    console.log(todos);
   };
-  function isEmptyOrSpaces(str) {
-    return str === null || str.match(/^ *$/) !== null;
-  }
+
   const inputValidation = (e) => {
     e.preventDefault();
     let dup = false;
@@ -44,20 +24,12 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         dup = true;
       }
     }
-    if (isEmptyOrSpaces(inputText) == true || dup == true) {
-      alert("Your input is invalid. Input may be a duplicate or is empty");
-      return;
-    } else {
+    if (inputText !== "" && inputText !== " " && !dup) {
       console.log(todos);
       submitTodoHandler(e);
-      todosList.push(inputText);
     }
+    todosList.push(inputText);
   };
-
-  // const displayDate = (e) => {
-  //   console.log(date);
-  //   submitTodoHandler(e);
-  // };
 
   return (
     <form>
@@ -66,15 +38,8 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         onChange={inputTextHandler}
         type="text"
         className="todo-input"
-        data-testid="new-item-input"
       />
-      <button
-        onClick={inputValidation}
-        // onClick={displayDate}
-        className="todo-button"
-        data-testid="new-item-button"
-        type="submit"
-      >
+      <button onClick={inputValidation} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
       {/* <div className="select">

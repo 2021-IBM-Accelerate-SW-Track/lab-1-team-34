@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-const Todo = ({ text, setTodos, todos, todo, date }) => {
+import Edit from "./edit";
+
+const Todo = ({ text, setTodos, todos, todo }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
@@ -22,40 +24,27 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
   const [ifHit, setifHit] = useState(false);
   const edit = () => {
     setifHit(!ifHit);
+    console.log(ifHit);
   };
-
-  // var today = new Date();
-  // var date =
-  //   today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-  // var time =
-  //   today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  // var dateTime = date + " " + time;
 
   return (
     <div className="todo">
-      <li className={`todo-item ${todo.completed ? "completed" : ""} `} onCh>
+      <li className={`todo-item ${todo.completed ? "completed" : ""} `}>
         {ifHit == true ? (
-          // if hit is true then render the 1st div(runs the code)
           <div
             contenteditable="true"
             // onInput={(e) =>
-            onKeyPress={(event) => {
-              if (event.key === "Enter") {
-                edit();
-              }
-            }}
           >
             {copytext}
           </div>
         ) : (
-          <div contenteditable="false">
-            <br />
+          <div
+            contenteditable="false"
+            // onInput={(e) =>
+          >
             {copytext}
-
-            <br />
           </div>
         )}
-        <div contenteditable="true"> {date} </div>
       </li>
 
       <button onClick={completeHandler} className="complete-btn">

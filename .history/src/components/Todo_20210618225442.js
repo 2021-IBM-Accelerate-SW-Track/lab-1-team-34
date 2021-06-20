@@ -48,14 +48,19 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
             {copytext}
           </div>
         ) : (
-          <div contenteditable="false">
-            <br />
-            {copytext}
+          <div
+            contenteditable="false"
 
+            // onInput={(e) =>
+          >
             <br />
+            {date}
+            <br />
+
+            {copytext}
           </div>
         )}
-        <div contenteditable="true"> {date} </div>
+        <div contenteditable="true"> </div>
       </li>
 
       <button onClick={completeHandler} className="complete-btn">

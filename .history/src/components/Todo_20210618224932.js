@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Todo = ({ text, setTodos, todos, todo, date }) => {
+const Todo = ({ text, setTodos, todos, todo, dateTime }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
@@ -48,14 +48,16 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
             {copytext}
           </div>
         ) : (
-          <div contenteditable="false">
-            <br />
-            {copytext}
+          <div
+            contenteditable="false"
 
-            <br />
+            // onInput={(e) =>
+          >
+            {dateTime}
+            {copytext}
           </div>
         )}
-        <div contenteditable="true"> {date} </div>
+        <div contenteditable="true"> </div>
       </li>
 
       <button onClick={completeHandler} className="complete-btn">
