@@ -1,10 +1,45 @@
 import React, { useState } from "react";
-
+import Button from '@material-ui/core/Button';
+import { makeStyles } from "@material-ui/styles";
 const Todo = ({ text, setTodos, todos, todo, date }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
+  const useStyles = makeStyles(theme => ({
+    
+    completebtn: {
+      background: "#2ea8d9",
+      color: "white",
+      border: "none",
+      padding: "1rem",
+      cursor: "pointer",
+      fontSize: "0.9rem",
+      borderRadius: "15px",
+      margin: "1px",
+    },
+    editbtn :{
+      background: "#2a2b2d",
+      color: "white",
+      border: "none",
+      padding: "1rem",
+      cursor: "pointer",
+      fontSize: "0.9rem",
+      borderRadius: "15px",
+      margin: "1px",
+    },
+    trashbtn: {
+      background: "rgb(228, 39, 39)",
+      color: "white",
+      border: "none",
+      padding: "1rem",
+      cursor: "pointer",
+      fontSize: "0.9rem",
+      borderRadius: "15px",
+      margin: "1px",
+    },
 
+  }));
+  const classes = useStyles();
   const completeHandler = () => {
     setTodos(
       todos.map((item) => {
@@ -55,21 +90,21 @@ const Todo = ({ text, setTodos, todos, todo, date }) => {
             <br />
           </div>
         )}
-        <div contenteditable="true"> {date} </div>
+        <div contenteditable="false"> {date} </div>
       </li>
 
-      <button onClick={completeHandler} className="complete-btn">
+      <Button variant= "contained" onClick={completeHandler} className={classes.completebtn}>
         <i className="fas fa-check"></i>
-      </button>
+      </Button>
 
       {/* edit handled should be here */}
-      <button className="edit-btn" onClick={edit}>
+      <Button variant= "contained" className={classes.editbtn} onClick={edit}>
         <i class="fas fa-pencil-alt"></i>
-      </button>
+      </Button>
 
-      <button onClick={deleteHandler} className="trash-btn">
+      <Button variant= "contained" onClick={deleteHandler} className={classes.trashbtn}>
         <i className="fas fa-trash"></i>
-      </button>
+      </Button>
     </div>
   );
 };

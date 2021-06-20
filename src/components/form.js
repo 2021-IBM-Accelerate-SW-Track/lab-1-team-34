@@ -1,4 +1,6 @@
 import React from "react";
+import Button from '@material-ui/core/Button';
+import { makeStyles } from "@material-ui/styles";
 
 var todosList = [];
 
@@ -7,6 +9,18 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
     console.log(e.target.value);
     setInputText(e.target.value);
   };
+  
+  const UseStyles = makeStyles(theme => ({
+    todobutton: {
+      padding: "0.5rem",
+      fontSize: "2rem",
+      border: "none",
+      background: "white",
+      borderRadius: "15px",
+      marginLeft: "3px",
+    },
+  }));
+  const classes = UseStyles();
   const submitTodoHandler = (e) => {
     var today = new Date();
     var date =
@@ -58,7 +72,8 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
   //   console.log(date);
   //   submitTodoHandler(e);
   // };
-
+  
+  
   return (
     <form>
       <input
@@ -68,15 +83,15 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         className="todo-input"
         data-testid="new-item-input"
       />
-      <button
+      <Button variant= "contained"
         onClick={inputValidation}
         // onClick={displayDate}
-        className="todo-button"
+        className={classes.todobutton}
         data-testid="new-item-button"
         type="submit"
       >
         <i className="fas fa-plus-square"></i>
-      </button>
+      </Button>
       {/* <div className="select">
         <select name="todos" className="filter-todo">
           <option value="all">All</option>
