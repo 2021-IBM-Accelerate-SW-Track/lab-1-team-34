@@ -25,7 +25,7 @@ function App() {
       />
 
       <List setTodos={setTodos} todos={todos} setTDL={setTDL} tDL={tDL}/>
-      <DateTime />
+      {/* <DateTime /> */}
 
     </div>
   );
