@@ -72,7 +72,6 @@ const form = ({ setInputText, todos, setTodos, inputText }) => {
         onClick={inputValidation}
         // onClick={displayDate}
         className="todo-button"
-        data-testid="new-item-button"
         type="submit"
       >
         <i className="fas fa-plus-square"></i>
