@@ -1,6 +1,3 @@
-.list-container {
-  background-color: aquamarine;
-}
 .lady-list {
   margin-top: 50px;
   max-width: 350px;
@@ -19,24 +16,6 @@
 }
 #root > .App > form {
   animation: floatY 3300ms ease-in-out infinite;
-}
-
-#root > .App > .todo-container {
-  animation: floatY 3300ms ease-in-out infinite;
-}
-
-.App > .header > .ibm {
-  animation: rotate5 3200ms infinite both;
-}
-@keyframes rotate5 {
-  0%,
-  100% {
-    transform: rotate(-5deg);
-  }
-
-  50% {
-    transform: rotate(5deg);
-  }
 }
 
 * {
@@ -103,6 +82,9 @@ form button:hover {
 .todo-list {
   min-width: 30%;
   list-style: none;
+}
+.todobutton {
+  box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
 }
 
 .todo {

@@ -2,9 +2,9 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/styles";
 
-//var todosList = [];
+var todosList = [];
 
-const form = ({ setInputText, todos, setTodos, inputText,setTDL, tDL }) => {
+const form = ({ setInputText, todos, setTodos, inputText }) => {
   const inputTextHandler = (e) => {
     console.log(e.target.value);
     setInputText(e.target.value);
@@ -53,7 +53,7 @@ const form = ({ setInputText, todos, setTodos, inputText,setTDL, tDL }) => {
   const inputValidation = (e) => {
     e.preventDefault();
     let dup = false;
-    for (const i of tDL) {
+    for (const i of todosList) {
       if (inputText.localeCompare(i) == 0) {
         dup = true;
       }
@@ -64,9 +64,7 @@ const form = ({ setInputText, todos, setTodos, inputText,setTDL, tDL }) => {
     } else {
       console.log(todos);
       submitTodoHandler(e);
-      setTDL([...tDL,inputText]);
-      //todosList.push(inputText);
-      console.log(tDL[0]);
+      todosList.push(inputText);
     }
   };
 
@@ -86,6 +84,7 @@ const form = ({ setInputText, todos, setTodos, inputText,setTDL, tDL }) => {
       />
       <Button
         variant="contained"
+        className="shadow-button"
         onClick={inputValidation}
         // onClick={displayDate}
         className={classes.todobutton}
