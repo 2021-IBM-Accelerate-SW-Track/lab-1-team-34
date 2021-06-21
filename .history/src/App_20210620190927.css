@@ -20,19 +20,31 @@
 #root > .App > .header {
   animation: slideInDown 1000ms both;
 }
+#root > .App > form {
+  animation: slide3dInUp 1900ms both;
+}
 
 .list-container {
   padding-bottom: 100px;
 }
-#root > .App > form {
-  animation: slide3dInUp 1600ms both;
-}
+@keyframes slide3dInUp {
+  from {
+    transform-origin: 50% 100%;
+    transform: perspective(200px) translate3d(0, 200%, -100px) rotateX(60deg);
+    opacity: 0;
+  }
 
-to {
-  transform-origin: 50% 100%;
-  transform: perspective(200px);
-}
+  50% {
+    transform-origin: 50% 100%;
+    transform: perspective(200px) rotateX(45deg);
+    opacity: 1;
+  }
 
+  to {
+    transform-origin: 50% 100%;
+    transform: perspective(200px);
+  }
+}
 @keyframes slideInDown {
   from {
     transform: translate3d(0, -100%, 0);
@@ -41,48 +53,6 @@ to {
 
   to {
     transform: translate3d(0, 0, 0);
-  }
-}
-.App > form > .todo-input {
-  animation: slide3dInUp 1800ms both;
-}
-@keyframes slide3dInUp {
-  from {
-    transform-origin: 50% 100%;
-    transform: perspective(200px) translate3d(0, 200%, -100px) rotateX(60deg);
-    opacity: 0;
-  }
-
-  50% {
-    transform-origin: 50% 100%;
-    transform: perspective(200px) rotateX(45deg);
-    opacity: 1;
-  }
-
-  to {
-    transform-origin: 50% 100%;
-    transform: perspective(200px);
-  }
-}
-.App > form > .MuiButtonBase-root {
-  animation: slide3dInUp 1900ms both;
-}
-@keyframes slide3dInUp {
-  from {
-    transform-origin: 50% 100%;
-    transform: perspective(200px) translate3d(0, 200%, -100px) rotateX(60deg);
-    opacity: 0;
-  }
-
-  50% {
-    transform-origin: 50% 100%;
-    transform: perspective(200px) rotateX(45deg);
-    opacity: 1;
-  }
-
-  to {
-    transform-origin: 50% 100%;
-    transform: perspective(200px);
   }
 }
 @keyframes floatY {

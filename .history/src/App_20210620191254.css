@@ -64,27 +64,6 @@ to {
     transform: perspective(200px);
   }
 }
-.App > form > .MuiButtonBase-root {
-  animation: slide3dInUp 1900ms both;
-}
-@keyframes slide3dInUp {
-  from {
-    transform-origin: 50% 100%;
-    transform: perspective(200px) translate3d(0, 200%, -100px) rotateX(60deg);
-    opacity: 0;
-  }
-
-  50% {
-    transform-origin: 50% 100%;
-    transform: perspective(200px) rotateX(45deg);
-    opacity: 1;
-  }
-
-  to {
-    transform-origin: 50% 100%;
-    transform: perspective(200px);
-  }
-}
 @keyframes floatY {
   0%,
   100% {
