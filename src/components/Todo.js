@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Todo = ({
   text,
   setTodos,
@@ -9,7 +10,16 @@ const Todo = ({
   setInputText,
   inputText,
 }) => {
+
+import Button from '@material-ui/core/Button';
+import { makeStyles } from "@material-ui/styles";
+const Todo = ({ text, setTodos, todos, todo, date, setTDL, tDL }) => {
+
   const deleteHandler = () => {
+    let copy = [...tDL];
+    for(const i of copy){console.log("before "+i);}
+    setTDL(copy.filter((e) => e.localeCompare(todo.text)!==0));
+    for(const i of copy){console.log("after "+i);}
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
   const completeHandler = () => {
