@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+
+
+const Todo = ({
+  text,
+  setTodos,
+  todos,
+  todo,
+  date,
+  setInputText,
+  inputText,
+}) => {
+
+import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/styles";
 const Todo = ({ text, setTodos, todos, todo, date, setTDL, tDL }) => {
+
   const deleteHandler = () => {
     let copy = [...tDL];
-    for (const i of copy) {
-      console.log("before " + i);
-    }
-    setTDL(copy.filter((e) => e.localeCompare(todo.text) !== 0));
-    for (const i of copy) {
-      console.log("after " + i);
-    }
+    for(const i of copy){console.log("before "+i);}
+    setTDL(copy.filter((e) => e.localeCompare(todo.text)!==0));
+    for(const i of copy){console.log("after "+i);}
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
   const completeHandler = () => {
@@ -25,6 +34,28 @@ const Todo = ({ text, setTodos, todos, todo, date, setTDL, tDL }) => {
         return item;
       })
     );
+  };
+  
+
+  var todosList = [];
+  function isEmptyOrSpaces(str) {
+    return str === null || str.match(/^ *$/) !== null;
+  }
+  const inputValidation = () => {
+    let dup = false;
+    for (const i of todosList) {
+      if (inputText.localeCompare(i) === 0) {
+        dup = true;
+      }
+    }
+    if (isEmptyOrSpaces(inputText) === true || dup === true) {
+      alert("Your input is invalid. Input may be a duplicate or is empty");
+      return;
+    } else {
+      console.log(todos);
+      //  submitTodoHandler(e);
+      todosList.push(inputText);
+    }
   };
 
   const [copytext, setcopytext] = useState(text);
