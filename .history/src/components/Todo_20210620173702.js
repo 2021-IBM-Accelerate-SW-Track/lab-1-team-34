@@ -73,10 +73,13 @@ const Todo = ({
             contenteditable="false"
             // onInput={(e) =>
           >
+            <br />
             {copytext}
+            <br />
+            {date}
           </div>
         )}
-        <div contenteditable="false"> {date}</div>
+        <div contenteditable="true"> </div>
       </li>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i>

@@ -73,7 +73,9 @@ const Todo = ({
             contenteditable="false"
             // onInput={(e) =>
           >
+            <br />
             {copytext}
+            <br />
           </div>
         )}
         <div contenteditable="false"> {date}</div>

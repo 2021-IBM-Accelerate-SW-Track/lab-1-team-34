@@ -67,6 +67,7 @@ const Todo = ({
             }}
           >
             {copytext}
+            <div contenteditable="false"> {date}</div>
           </div>
         ) : (
           <div
