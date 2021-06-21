@@ -3,22 +3,17 @@
 }
 
 .form-list {
-  background-color: rgb(228, 228, 228);
+  background-color: white;
   width: 80%;
   max-width: 600px;
   height: auto;
-  margin-left: 35%;
-  border-radius: 30px;
+  margin-left: 50%;
 }
 .lady-list {
   margin-top: 50px;
   max-width: 350px;
   max-height: 350px;
   border-radius: 40px;
-}
-
-.list-container {
-  padding-bottom: 100px;
 }
 @keyframes floatY {
   0%,
